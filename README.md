@@ -1,37 +1,102 @@
-Overview:-
+# 🎉 Birthday Wisher Bot 🎂
 
-This project automates the process of sending personalized birthday emails using Python. It checks a CSV file (birthdays.csv) to identify if today matches any listed birthdays and sends a custom email using pre-written templates. The goal is to simplify the task of remembering and sending birthday greetings.
+A simple Python automation script that sends personalized birthday wishes via email. Built using `pandas`, `datetime`, and `smtplib`.
 
-Features
-Automated Birthday Matching: Reads a CSV file containing names, emails, and birth dates to identify birthdays.
+## 📌 Features
 
-Personalized Emails: Uses pre-designed templates to send customized birthday messages.
+- 📅 Automatically checks for birthdays every day
+- 💌 Sends personalized email greetings to your friends/family
+- 📝 Supports customizable letter templates
+- 🔐 Email login credentials securely used via environment variables or config file
 
-Email Integration: Sends emails via Gmail SMTP server with secure authentication.
+---
 
-Dynamic Content Replacement: Replaces placeholders in email templates with recipient-specific information.
+## 📁 Project Structure
 
-Files in the Project
-1. main.py
-This is the main Python script that:
+```
+.
+├── birthdays.csv              # List of people and their birthdays
+├── main.py                    # Main script to send birthday emails
+└── letter_templates/
+    ├── letter_1.txt
+    ├── letter_2.txt
+    └── letter_3.txt
+```
 
-Reads the birthdays.csv file using Pandas.
+---
 
-Checks if today's date matches any birthdays in the file.
+## 📦 Requirements
 
-Selects a random email template from the letter_templates/ folder.
+- Python 3.x
+- pandas
 
-Sends the email using Gmail's SMTP server.
+Install dependencies:
 
-2. birthdays.csv
-A CSV file containing the following columns:
+```bash
+pip install pandas
+```
 
-name: Name of the person.
+---
 
-email: Email address of the person.
+## 🛠 How It Works
 
-year: Year of birth (optional).
+1. The script reads `birthdays.csv` to find any matching birthdays for the current day.
+2. If a match is found:
+   - A random birthday letter template is chosen.
+   - The placeholder `[NAME]` is replaced with the recipient's name.
+   - An email is sent via Gmail using `smtplib`.
 
-month: Month of birth.
+---
 
-day: Day of birth.
+## ✍️ Sample CSV Format
+
+```csv
+name,email,year,month,day
+John Doe,john@example.com,1990,4,13
+Jane Smith,jane@example.com,1985,6,22
+```
+
+📄 [Click here to view the birthdays.csv file](./birthdays.csv)
+
+---
+
+## 📬 Email Setup
+
+You must enable **"Less secure app access"** or use **App Passwords** in your Gmail account settings.
+
+Update the following in `main.py`:
+
+```python
+my_email = "youremail@gmail.com"
+my_password = "your_app_password"
+```
+
+⚠️ **Important:** Never upload your real credentials to GitHub. Use `.env` or config files and add them to `.gitignore`.
+
+---
+
+## 🤖 Automation Tip
+
+You can schedule this script to run daily using:
+
+- **Windows**: Task Scheduler
+- **Mac/Linux**: `cron` job
+
+---
+
+## 🙌 Contribution
+
+Pull requests are welcome! If you’d like to suggest improvements or new features, feel free to open an issue.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 💡 Author
+
+**Hare Krishana Mishra**  
+
