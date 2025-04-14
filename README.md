@@ -90,9 +90,7 @@ Pull requests are welcome! If you’d like to suggest improvements or new featur
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License.
 
 ---
 
