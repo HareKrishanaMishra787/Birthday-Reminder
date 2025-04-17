@@ -3,8 +3,8 @@ import datetime as dt
 import pandas
 import random
 import smtplib
-my_email = "tarun96968@gmail.com"
-my_password= "srcv nbae lpoh fhxd"
+my_email = "write your Email"
+my_password= "Your Email Password"
 # 2. Check if today matches a birthday in the birthdays.csv
 # today = (today_month, today_day)
 today_tuple = (dt.datetime.now().month,dt.datetime.now().day)
